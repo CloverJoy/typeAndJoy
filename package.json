@@ -1,0 +1,36 @@
+{
+  "name": "typeandjoy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js",
+    "build": "webpack",
+    "react-dev": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CloverJoy/typeAndJoy.git"
+  },
+  "author": "Christoffel Angga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CloverJoy/typeAndJoy/issues"
+  },
+  "homepage": "https://github.com/CloverJoy/typeAndJoy#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  }
+}
