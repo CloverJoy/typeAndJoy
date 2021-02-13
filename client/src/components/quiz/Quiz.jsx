@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import QuizFormat from './QuizFormat';
 import QuizResult from './QuizResult';
 import mbtiQuestions from '../../../offlineData.js';
@@ -29,6 +30,11 @@ const Quiz = (props) => {
     setScore({...score, [letter]: current + 1});
     addStep();
   }
+  useEffect(() => {
+    axios.get('/api/questions')
+      .then(res => setQuizes(res.data))
+      .catch(err => console.log(err));
+  }, [])
   if (step < quizes.length) {
     return (
       <div>

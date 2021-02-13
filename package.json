@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/index.js",
     "build": "webpack",
-    "react-dev": "webpack -w"
+    "react-dev": "webpack -w",
+    "seed": "node database/seed.js"
   },
   "repository": {
     "type": "git",
@@ -20,13 +21,16 @@
   },
   "homepage": "https://github.com/CloverJoy/typeAndJoy#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "express": "^4.17.1",
+    "mongoose": "^5.11.16",
     "nodemon": "^2.0.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
+    "@babel/plugin-transform-async-to-generator": "^7.12.13",
     "@babel/preset-env": "^7.12.16",
     "@babel/preset-react": "^7.12.13",
     "babel-loader": "^8.2.2",
