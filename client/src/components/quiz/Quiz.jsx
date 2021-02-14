@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Text } from '@chakra-ui/react'
+import { Text, Center, Box } from '@chakra-ui/react'
 import QuizFormat from './QuizFormat';
 import QuizResult from './QuizResult';
 import mbtiQuestions from '../../../offlineData.js';
@@ -38,7 +38,8 @@ const Quiz = (props) => {
   }, [])
   if (step < quizes.length) {
     return (
-      <div>
+        <Box>
+        <Center>
         <Text
           bgGradient="linear(to-r, blue.200, green.500)"
           bgClip="text"
@@ -47,14 +48,17 @@ const Quiz = (props) => {
         >
         TYPE & JOY!
         </Text>
+        </Center>
+        <Center>
         <QuizFormat question={quizes[step]} addScore ={addScore} />
-      </div>
+        </Center>
+        </Box>
     )
   } else {
     return (
-      <div>
+      <Center>
         <QuizResult score={score} />
-      </div>
+      </Center>
     )
   }
 };
