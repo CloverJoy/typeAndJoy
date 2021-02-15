@@ -15,6 +15,7 @@ import {
   FormErrorMessage,
   FormHelperText,
   useToast,
+  Box,
 } from "@chakra-ui/react";
 
 const Form = () => {
@@ -32,9 +33,9 @@ const Form = () => {
       duration: 2222,
       isClosable: true,
     })
-
   }
   return (
+    <Box m={"3em"}>
     <form onSubmit={handleSubmit(onSubmit)}>
       <Center>
         <Wrap>
@@ -93,6 +94,7 @@ const Form = () => {
         </Wrap>
       </Center>
     </form>
+    </Box>
   )
 }
 

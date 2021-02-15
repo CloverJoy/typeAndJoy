@@ -38,15 +38,15 @@ const Quiz = (props) => {
   }, [])
   if (step < quizes.length) {
     return (
-        <Box>
+        <Box m={4}>
         <Center>
         <Text
           bgGradient="linear(to-r, blue.200, green.500)"
           bgClip="text"
-          fontSize="6xl"
+          fontSize="3xl"
           fontWeight="extrabold"
         >
-        TYPE & JOY!
+        {`Question ${step+1}/${quizes.length}`}
         </Text>
         </Center>
         <Center>

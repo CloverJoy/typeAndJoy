@@ -1,32 +1,29 @@
 import React, { useState } from 'react';
-import { ChakraProvider, Button, useColorMode } from '@chakra-ui/react';
-import { SunIcon, StarIcon } from '@chakra-ui/icons';
+import { Button, Divider } from '@chakra-ui/react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Quiz from './quiz/Quiz';
+import Navbar from './Navbar';
+import Landing from './Landing';
 import theme from '../theme';
-import Form from './SignUp/Form';
+import Form from './Form';
+import Admin from './AdminCMS/Admin';
 
 const App = () => {
-  const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Router>
-      <Button onClick={toggleColorMode} colorScheme="blue">
-          { colorMode === 'dark' ? <SunIcon /> : <StarIcon /> }
-        </Button>
+      <Navbar />
+      <Divider />
       <Switch>
-       <Route path="/" >
-        <Form />
-        </Route>
-        <Route path="/quiz" >
-        <Quiz />
-        </Route>
+        <Route exact path="/" component={Landing} />
+        <Route path="/signup" component={Form} />
+        <Route path="/quiz" component={Quiz} />
+        <Route path="/admin" component={Admin} />
       </Switch>
-    </Router>
+  </Router>
   )
 };
 

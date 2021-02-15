@@ -10,7 +10,7 @@ const QuizFormat = (props) => (
       <Image src={props.question.pic}/>
     </Center>
     <Center>
-      <Button colorScheme="red" variant="outline" onClick={() => props.addScore(props.question, false)}>False</Button>
+      <Button colorScheme="red" variant="outline" m={5} onClick={() => props.addScore(props.question, false)}>False</Button>
       <Button colorScheme="green" variant="outline" onClick={() => props.addScore(props.question, true)}>True</Button>
     </Center>
   </Box>
