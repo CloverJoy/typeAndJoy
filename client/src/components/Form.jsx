@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom';
 import {
   Text,
   Input,
@@ -16,26 +17,36 @@ import {
   FormHelperText,
   useToast,
   Box,
+  Heading,
 } from "@chakra-ui/react";
 
 const Form = () => {
   const { register, handleSubmit } = useForm();
-  const [show, setShow] = React.useState(false)
-  const handleClick = () => setShow(!show)
+  const [show, setShow] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(false);
+  const handleClick = () => setShow(!show);
   const toast = useToast();
 
   const onSubmit = (data) => {
     console.log(data);
     toast({
+      position: 'bottom-left',
       title: `Welcome ${data.userName}!`,
       description: 'Your account is created :D',
       status: 'success',
       duration: 2222,
       isClosable: true,
     })
+    setIsRegistered(true);
   }
-  return (
-    <Box m={"3em"}>
+  if (!isRegistered) {
+    return (
+    <Box m={"1em"}>
+    <Center>
+        <Heading m={7}>
+          Register
+        </Heading>
+    </Center>
     <form onSubmit={handleSubmit(onSubmit)}>
       <Center>
         <Wrap>
@@ -96,6 +107,23 @@ const Form = () => {
     </form>
     </Box>
   )
+  } else {
+    return (
+      <Box>
+      <Center>
+        <Heading m={10}>
+          Registration Success!
+        </Heading>
+      </Center>
+      <Center>
+        <Link to={{ pathname: '/' }}>
+        <Button colorScheme="teal">BACK TO HOME!</Button>
+        </Link>
+        </Center>
+      </Box>
+    )
+  }
+
 }
 
 export default Form;

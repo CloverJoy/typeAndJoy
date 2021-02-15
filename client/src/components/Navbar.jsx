@@ -21,7 +21,7 @@ const Navbar = () => {
       <Spacer />
       <Box mr="2">
       <Link to={{ pathname: '/admin' }}>
-      <Button colorScheme="teal">Login</Button>
+      <Button colorScheme="teal">Admin</Button>
       </Link>
       </Box>
       <Box mr="2">

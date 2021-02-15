@@ -25,7 +25,7 @@ const Landing = () => {
       <Center>
       <Box>
       <Link to={{ pathname: '/quiz' }}>
-      <Button colorScheme="teal">Take 16 personalities quiz now!!</Button>
+      <Button colorScheme="teal">Take MBTI test now!</Button>
       </Link>
       </Box>
       </Center>

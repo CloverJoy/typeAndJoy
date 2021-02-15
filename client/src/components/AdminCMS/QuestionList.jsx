@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Text } from '@chakra-ui/react';
-import mbtiQuestions from '../../../offlineData';
+import DeleteQuestion from './DeleteQuestion';
 
 const QuestionListEntry = (props) => {
-  const { question, type, answer } = props.q;
+  const { question, type, answer, _id } = props.q;
   return (
     <Box>
       <Text>{`Question: ${question}`}</Text>
       <Text>{`Type: ${type}`}</Text>
       <Text>{`Answer: ${answer}`}</Text>
+      <DeleteQuestion refreshData={props.refreshData} id={_id} />
     </Box>
   )
 };
 
 const QuestionList = (props) => {
-  const [questions, setQuestions] = useState(mbtiQuestions);
   return (
     <Box>
     {
-      questions.map((question, idx) => <QuestionListEntry id={`questions ${idx}`} q={question} />)
+      props.questions.map((question, idx) => <QuestionListEntry refreshData={props.refreshData} key={`questions ${idx}`} q={question} />)
     }
     </Box>
   )
