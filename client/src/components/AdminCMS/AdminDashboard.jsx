@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text, Flex } from '@chakra-ui/react';
 import QuestionList from './QuestionList';
 import AddModal from './AddModal';
 import mbtiQuestions from '../../../offlineData';
@@ -17,19 +17,20 @@ const AdminDashboard = (props) => {
       .catch(err => console.log(err));
   }, [refresh]);
   return (
-    <Box>
+    <Flex justifyContent='center'>
+      <Box m={5}>
       <Heading>
       Welcome seradotwav!
       </Heading>
       <Text>
       {`We have ${questions.length} questions now!`}
       </Text>
-      <Text>
-      Question List:
-      </Text>
-      <QuestionList questions={questions} refreshData={refreshData} />
       <AddModal refreshData={refreshData} />
-    </Box>
+      </Box>
+      <Box>
+      <QuestionList questions={questions} refreshData={refreshData} />
+      </Box>
+    </Flex>
   )
 };
 

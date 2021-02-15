@@ -36,7 +36,7 @@ const datas = [
   },
   {
     question: 'I prefer to follow a schedule',
-    type: 'J/p',
+    type: 'J/P',
     answer: 'J',
     pic: JP,
   },
