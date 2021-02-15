@@ -1,38 +1,35 @@
-import React from 'react';
-import { Box, Text, Heading, Button, Center, Container, Divider } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Box, Text, Heading, Button, Center, Container, Divider, useColorModeValue as mode } from '@chakra-ui/react';
+import { Redirect, Link } from 'react-router-dom';
 
 const Landing = () => {
+  const [clicked, setClicked] = useState('false');
+  const toggleRedirect = () => {
+     setClicked(!clicked);
+  };
   return (
-    <Center>
-    <Box mt={40}>
-      <Container>
-      <Center>
-      <Box mb={5}>
-      <Heading size="xl">
-        Welcome to Type & Joy!
-      </Heading>
+    <Box as="section">
+      <Box maxW="2xl" mx="auto" px={{ base: '6', lg: '8' }} py={{ base: '16', sm: '20' }} textAlign="center">
+        <Heading as="h2" size="3xl" fontWeight="extrabold" letterSpacing="tight">
+          Ready to know yourself better?
+        </Heading>
+        <Text mt="4" fontSize="lg">
+          We provide the dynamic and up-to-date MBTI questions, take your personality test now!
+        </Text>
+      <Button onClick={toggleRedirect} mt="8" as="a" href="#" size="lg" colorScheme="teal" fontWeight="bold">
+       Take mbti test now!
+      </Button>
       </Box>
-      </Center>
-      <Divider />
-      <Box mb={5} mt={5}>
-      <Heading size="l">
-        Dynamic and up-to-date Myers-Briggs personalities test!
-        <br />
-        Know yourself better! :D
-      </Heading>
-      </Box>
-      <Center>
-      <Box>
-      <Link to={{ pathname: '/quiz' }}>
-      <Button colorScheme="teal">Take MBTI test now!</Button>
-      </Link>
-      </Box>
-      </Center>
-      </Container>
+      {
+        !clicked && (
+          <Redirect to="/quiz" />
+        )
+      }
     </Box>
-    </Center>
   )
 };
+
+
+
 
 export default Landing;

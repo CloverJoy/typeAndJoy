@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, Container, Center, Wrap } from '@chakra-ui/react';
+import { Box, Text, Container, Center, Wrap, Divider } from '@chakra-ui/react';
 import DeleteQuestion from './DeleteQuestion';
 
 const QuestionListEntry = (props) => {
@@ -16,6 +16,7 @@ const QuestionListEntry = (props) => {
       </Center>
     </Box>
     </Container>
+    <Divider />
     </Wrap>
   )
 };
@@ -23,7 +24,7 @@ const QuestionListEntry = (props) => {
 const QuestionList = (props) => {
   return (
     <Center>
-    <Box>
+    <Box sx={{"overflowX": "hidden", "textAlign":"justify", "height": "80vh"}}>
     {
       props.questions.map((question, idx) => <QuestionListEntry refreshData={props.refreshData} key={`questions ${idx}`} q={question} />)
     }

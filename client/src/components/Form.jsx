@@ -18,6 +18,7 @@ import {
   useToast,
   Box,
   Heading,
+  useColorModeValue as mode,
 } from "@chakra-ui/react";
 
 const Form = () => {
@@ -41,16 +42,17 @@ const Form = () => {
   }
   if (!isRegistered) {
     return (
-    <Box m={"1em"}>
+    <Box m={"1em"} bg={mode('gray.50', 'inherit')}>
     <Center>
-        <Heading m={7}>
+        <Heading size="xl" m={4}>
           Register
         </Heading>
     </Center>
     <form onSubmit={handleSubmit(onSubmit)}>
       <Center>
+      <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" p={3} m={3}>
         <Wrap>
-          <Stack spacing={4}>
+          <Stack spacing={4} m={5}>
             <FormControl id="fullName" isRequired>
             <FormLabel>Full Name</FormLabel>
             <Input name="fullName" ref={register({ required: true, minLength: 3 })} placeholder="Seraphine Songstress" />
@@ -103,6 +105,7 @@ const Form = () => {
             <Button type="submit" colorScheme="teal"> Submit </Button>
           </Stack>
         </Wrap>
+        </Box>
       </Center>
     </form>
     </Box>

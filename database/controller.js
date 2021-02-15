@@ -2,7 +2,7 @@ const { Questions } = require('./index.js');
 
 const retrieveQuestions = async () => {
   try {
-    const questions = await Questions.find({});
+    const questions = await Questions.find({}).sort({createdAt: -1});
     console.log('Questions queried')
     return questions
   } catch (error) {

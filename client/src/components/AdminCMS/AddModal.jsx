@@ -15,7 +15,8 @@ import {
   Input,
   Textarea,
   Select,
-  useToast
+  useToast,
+  Box,
 } from "@chakra-ui/react";
 
 const AddModal = (props) => {
@@ -61,7 +62,7 @@ const AddModal = (props) => {
   const initialRef = React.useRef()
 
   return (
-    <>
+    <Box mt={3}>
       <Button onClick={onOpen} colorScheme="teal">Create a new question</Button>
 
       <Modal
@@ -112,7 +113,7 @@ const AddModal = (props) => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </>
+    </Box>
   )
 };
 

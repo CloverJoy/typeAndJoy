@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Input, Heading, Stack, Text, Button, Center, Wrap, InputGroup, InputRightElement } from '@chakra-ui/react';
+import { Box, Input, Heading, Stack, Text, Button, Center, Wrap, InputGroup, InputRightElement, useToast } from '@chakra-ui/react';
 
 const Login = (props) => {
   const [user, setUser] = useState('');
@@ -18,6 +18,7 @@ const Login = (props) => {
         </Heading>
       </Center>
       <Center>
+      <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" p={7} m={3}>
       <Wrap>
         <Stack spacing={4}>
           <Text>Username: </Text>
@@ -40,6 +41,7 @@ const Login = (props) => {
           <Button colorScheme="teal" onClick={props.login}>Demo Login</Button>
         </Stack>
       </Wrap>
+      </Box>
       </Center>
     </Box>
   )
