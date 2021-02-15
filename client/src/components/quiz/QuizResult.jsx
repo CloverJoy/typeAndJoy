@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Heading, Image, Container, Text, Center } from '@chakra-ui/react';
+import { Flex, Spacer, Box, Heading, Image, Container, Text, Center } from '@chakra-ui/react';
 import profile from './profile';
+import ShareResult from './ShareResult';
 
 const QuizResult = (props) => {
   const generateLetter = (result) => {
@@ -29,7 +30,16 @@ const QuizResult = (props) => {
   }
   const type = generateLetter(props.score);
   return (
-    <Box maxW="lg" borderWidth="1px" borderRadius="lg" overflow="hidden" p={5} m={5}>
+    <Flex alignItems="start" justifyContent="space-around">
+    <Center>
+    <Box>
+      <Heading>
+        Test test
+      </Heading>
+    </Box>
+    </Center>
+    <Center>
+    <Box sx={{"overflowX": "hidden", "textAlign":"justify", "height": "80vh"}} maxW="lg" borderWidth="1px" borderRadius="lg" p={5} m={5}>
       <Center>
       <Heading
       m={5}
@@ -52,7 +62,12 @@ const QuizResult = (props) => {
       <Text>{profile[type].description}</Text>
       </Container>
       </Center>
+      <Center>
+      <ShareResult result={type} />
+      </Center>
     </Box>
+    </Center>
+    </Flex>
   )
 }
 

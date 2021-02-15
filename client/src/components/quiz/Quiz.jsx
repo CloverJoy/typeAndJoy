@@ -56,9 +56,7 @@ const Quiz = (props) => {
     )
   } else {
     return (
-      <Center>
         <QuizResult score={score} />
-      </Center>
     )
   }
 };

@@ -19,10 +19,10 @@ const AdminDashboard = (props) => {
   return (
     <Flex justifyContent='center'>
       <Box m={5}>
-      <Heading>
+      <Heading mb={5}>
       Welcome seradotwav!
       </Heading>
-      <Text>
+      <Text mb={5}>
       {`We have ${questions.length} questions now!`}
       </Text>
       <AddModal refreshData={refreshData} />
