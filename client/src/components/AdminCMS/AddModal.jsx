@@ -43,7 +43,6 @@ const AddModal = (props) => {
     const data = { question, answer, type, pic };
     axios.post('/api/questions', data)
       .then(res => {
-        console.log(res.data);
         toast({
           position: 'bottom-left',
           title: `Question succesfully created!`,
@@ -62,7 +61,7 @@ const AddModal = (props) => {
   const initialRef = React.useRef()
 
   return (
-    <Box mt={3}>
+    <Box m={3}>
       <Button onClick={onOpen} colorScheme="teal">Create a new question</Button>
 
       <Modal

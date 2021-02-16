@@ -1,6 +1,13 @@
 const express = require('express')
 const app = express()
-const { retrieve, insertQuestion, deleteQuestion } = require('../database/controller.js');
+const {
+  retrieve,
+  insertQuestion,
+  deleteQuestion,
+  retrieveResults,
+  insertResult,
+  deleteResult,
+} = require('../database/controller.js');
 
 const PORT = process.env.PORT || 3000;
 
@@ -38,7 +45,39 @@ app.delete('/api/questions', async (req,res) => {
     console.log(err);
     res.send(500)
   }
+});
 
+app.get('/api/results', async (req, res) => {
+  try {
+    const data = await retrieveResults();
+    res.send(data);
+  } catch (error) {
+    console.log(error);
+    res.send(500);
+  }
+});
+
+app.post('/api/results', async (req,res) => {
+  try {
+    const data = req.body;
+    console.log(data)
+    await insertResult(data);
+    res.sendStatus(201);
+  } catch (error) {
+    console.log(error);
+    res.send(500);
+  }
+});
+
+app.delete('/api/results', async (req,res) => {
+  try {
+    const { id } = req.query;
+    await deleteResult(id);
+    res.sendStatus(204);
+  } catch(err) {
+    console.log(err);
+    res.send(500)
+  }
 });
 
 app.listen(PORT, () => {

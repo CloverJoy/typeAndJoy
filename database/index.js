@@ -15,6 +15,14 @@ const questionSchema = new mongoose.Schema({
   pic: {type: String, required: true},
 }, { timestamps: true });
 
+const resultSchema = new mongoose.Schema({
+  name: {type: String, required: true},
+  email: {type: String, required: true},
+  result: {type: String, required: true},
+}, { timestamps: true });
+
 const Questions = mongoose.model('Questions', questionSchema);
+const Results = mongoose.model('Results', resultSchema);
 
 exports.Questions = Questions;
+exports.Results = Results;

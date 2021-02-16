@@ -1,4 +1,4 @@
-const { Questions } = require('./index.js');
+const { Questions, Results } = require('./index.js');
 
 const retrieveQuestions = async () => {
   try {
@@ -37,7 +37,38 @@ const deleteQuestion = async (id) => {
   }
 };
 
+const deleteResult = async (id) => {
+  try {
+    const deleted = await Results.deleteOne({_id: id});
+    console.log(deleted);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const retrieveResults = async () => {
+   try {
+    const results = await Results.find({}).sort({createdAt: -1});
+    console.log(results);
+    return results
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const insertResult = async (result) => {
+    try {
+    const inserted = await Results.create({ name: result.name, result: result.result, email: result.email });
+    console.log(inserted);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 exports.retrieve = retrieveQuestions;
 exports.bulk = bulkInsert;
 exports.insertQuestion = insertQuestion;
 exports.deleteQuestion = deleteQuestion;
+exports.deleteResult = deleteResult;
+exports.insertResult = insertResult;
+exports.retrieveResults = retrieveResults;

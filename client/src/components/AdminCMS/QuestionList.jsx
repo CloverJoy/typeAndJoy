@@ -11,9 +11,7 @@ const QuestionListEntry = (props) => {
       <Text>{`Question: ${question}`}</Text>
       <Text>{`Type: ${type}`}</Text>
       <Text>{`Answer: ${answer}`}</Text>
-      <Center>
-      <DeleteQuestion refreshData={props.refreshData} id={_id} />
-      </Center>
+      <DeleteQuestion which={'questions'} isNotAdmin={props.isNotAdmin} refreshData={props.refreshData} id={_id} />
     </Box>
     </Container>
     <Divider />

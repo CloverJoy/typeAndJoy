@@ -13,8 +13,6 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Textarea,
-  Select,
   useToast,
   Box,
 } from "@chakra-ui/react";
@@ -25,11 +23,27 @@ const ShareResult = (props) => {
   const [email, setEmail] = useState('');
   const [isSubmit, setSubmit] = useState(false);
   const {result} = props;
+  const toast = useToast();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     setSubmit(true);
-    console.log({name, email, result})
-    onClose();
+    const data = {name, email, result};
+    console.log(data);
+    axios.post('/api/results', data)
+      .then((res) => {
+         toast({
+          position: 'bottom-left',
+          title: `Answer succesfully shared!`,
+          description: `${name} is ${result} :D` ,
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        });
+        props.refreshData();
+        onClose();
+      })
+      .catch(err => console.log(err));
+      e.preventDefault();
   }
 
   const initialRef = React.useRef()

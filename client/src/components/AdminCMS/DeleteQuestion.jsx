@@ -16,18 +16,23 @@ import {
   const cancelRef = React.useRef()
   const handleDelete = () => {
     const id = props.id;
-    axios.delete('/api/questions', {params: {id}})
+    axios.delete(`/api/${props.which}`, {params: {id}})
       .then(res => {
         props.refreshData();
         onClose();
       })
       .catch(err => console.log(err));
   }
-
-  return (
+  if (props.isNotAdmin) {
+    return (
+      <>
+      </>
+    )
+  } else {
+    return (
     <>
       <Button size="xs" colorScheme="red" onClick={() => setIsOpen(true)}>
-        Delete question
+        Delete {props.which}
       </Button>
 
       <AlertDialog
@@ -38,7 +43,7 @@ import {
         <AlertDialogOverlay>
           <AlertDialogContent>
             <AlertDialogHeader fontSize="lg" fontWeight="bold">
-              Delete Question
+              Delete {props.which}
             </AlertDialogHeader>
 
             <AlertDialogBody>
@@ -58,6 +63,8 @@ import {
       </AlertDialog>
     </>
   )
+  }
+
  };
 
  export default DeleteQuestion;
