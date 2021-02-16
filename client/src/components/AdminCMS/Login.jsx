@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Input, Heading, Stack, Text, Button, Center, Wrap, InputGroup, InputRightElement, useToast } from '@chakra-ui/react';
+import axios from 'axios';
 
 const Login = (props) => {
   const [user, setUser] = useState('');
@@ -7,7 +8,12 @@ const Login = (props) => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const handleSubmit = (e) => {
-    console.log({user: user, password: password});
+    const data = {userName: user, password: password};
+    axios.post('/api/login', data)
+      .then(res => console.log(res.data))
+      .catch(err => {
+        console.log(err.data);
+      })
     e.preventDefault();
   };
   return (

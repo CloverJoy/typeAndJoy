@@ -64,7 +64,6 @@ import {
     </>
   )
   }
-
  };
 
  export default DeleteQuestion;

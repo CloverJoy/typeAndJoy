@@ -1,4 +1,5 @@
-const { Questions, Results } = require('./index.js');
+const { Questions, Results, Admins } = require('./index.js');
+const { generateHashPassword, compare } = require('../server/security.js');
 
 const retrieveQuestions = async () => {
   try {
@@ -65,6 +66,40 @@ const insertResult = async (result) => {
   }
 };
 
+const createAdmin = async (info) => {
+  try {
+    const created = await Admins.create({
+      fullName: info.fullName,
+      userName: info.userName,
+      password: await generateHashPassword(info.password),
+      email: info.email,
+      mbtiType: info.mbtiType
+    });
+    console.log(created);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const loginAdmin = async (info) => {
+  try {
+    const fromDb = await Admins.findOne({userName: info.userName});
+    if (!fromDb) { console.log('nomatch user');return 'nouser';}
+    const passwordMatched = await compare(info.password, fromDb.password);
+    if (!passwordMatched) {
+      console.log('wrong password!')
+      return 'passincorrect'
+    } else if (passwordMatched) {
+      console.log('success!')
+      return 'success'
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// loginAdmin({userName: 'seradotwav', password: 'password'});
+
 exports.retrieve = retrieveQuestions;
 exports.bulk = bulkInsert;
 exports.insertQuestion = insertQuestion;
@@ -72,3 +107,5 @@ exports.deleteQuestion = deleteQuestion;
 exports.deleteResult = deleteResult;
 exports.insertResult = insertResult;
 exports.retrieveResults = retrieveResults;
+exports.createAdmin = createAdmin;
+exports.loginAdmin = loginAdmin;

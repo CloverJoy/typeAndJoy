@@ -7,6 +7,8 @@ const {
   retrieveResults,
   insertResult,
   deleteResult,
+  createAdmin,
+  loginAdmin,
 } = require('../database/controller.js');
 
 const PORT = process.env.PORT || 3000;
@@ -77,6 +79,28 @@ app.delete('/api/results', async (req,res) => {
   } catch(err) {
     console.log(err);
     res.send(500)
+  }
+});
+
+app.post('/api/admin', async (req, res) => {
+  try {
+    const data = req.body;
+    console.log(data);
+    await createAdmin(data);
+    res.sendStatus(201);
+  } catch (err) {
+    console.log(err);
+    res.send(500);
+  }
+});
+
+app.post('/api/login', async (req, res) => {
+  try {
+    const data = req.body;
+    const status = await loginAdmin(data);
+    res.send(status);
+  } catch (err) {
+    res.sendStatus(500);
   }
 });
 

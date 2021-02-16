@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import {
   Text,
   Input,
@@ -30,16 +31,22 @@ const Form = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    toast({
-      position: 'bottom-left',
-      title: `Welcome ${data.userName}!`,
-      description: 'Your account is created :D',
-      status: 'success',
-      duration: 2222,
-      isClosable: true,
-    })
-    setIsRegistered(true);
+    axios.post('/api/admin', data)
+      .then(res => {
+        console.log(res);
+        toast({
+          position: 'bottom-left',
+          title: `Welcome ${data.userName}!`,
+          description: 'Your account is created :D',
+          status: 'success',
+          duration: 2222,
+          isClosable: true,
+        });
+        setIsRegistered(true);
+      })
+      .catch(err => console.log(err));
   }
+
   if (!isRegistered) {
     return (
     <Box m={"1em"} bg={mode('gray.50', 'inherit')}>

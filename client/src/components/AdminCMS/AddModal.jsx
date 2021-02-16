@@ -29,16 +29,16 @@ const AddModal = (props) => {
     let type, pic;
     if (answer === 'E' || answer === 'I') {
       type = 'E/I';
-      pic = 'https://loremflickr.com/320/240/party,home';
+      pic = 'https://loremflickr.com/cache/resized/65535_50656849541_6221f03080_320_240_nofilter.jpg';
     } else if (answer === 'S' || answer === 'N') {
       type = 'S/N'
-      pic = 'https://loremflickr.com/320/240/technician,chess';
+      pic = 'https://loremflickr.com/cache/resized/defaultImage.small_320_240_nofilter.jpg';
     } else if (answer === 'T' || answer === 'F') {
       type = 'T/F';
-      pic = 'https://loremflickr.com/320/240/negotiate,thinker';
+      pic = 'https://loremflickr.com/cache/resized/65535_47944137627_2625fd4e50_n_320_240_nofilter.jpg';
     } else {
       type = 'J/P';
-      pic = 'https://loremflickr.com/320/240/judge,chill';
+      pic = 'https://loremflickr.com/cache/resized/65535_50778513638_c2a98281e3_320_240_nofilter.jpg';
     }
     const data = { question, answer, type, pic };
     axios.post('/api/questions', data)

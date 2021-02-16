@@ -21,8 +21,18 @@ const resultSchema = new mongoose.Schema({
   result: {type: String, required: true},
 }, { timestamps: true });
 
+const adminSchema = new mongoose.Schema({
+  fullName: {type: String, required: true},
+  userName: {type: String, required: true, unique: true},
+  email: {type: String, required: true, unique: true},
+  password: {type: String, required: true},
+  mbtiType: {type: String},
+}, { timestamps: true });
+
 const Questions = mongoose.model('Questions', questionSchema);
 const Results = mongoose.model('Results', resultSchema);
+const Admins = mongoose.model('Admins', adminSchema);
 
 exports.Questions = Questions;
 exports.Results = Results;
+exports.Admins = Admins;
