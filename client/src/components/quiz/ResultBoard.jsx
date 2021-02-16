@@ -11,7 +11,7 @@ const BoardEntry = (props) => {
     <Heading size="md">{name}</Heading>
     <Text>{`Type: ${result}`}</Text>
     <Text>{moment(createdAt).fromNow()}</Text>
-    <DeleteQuestion isNotAdmin={props.isNotAdmin} which={'results'} refreshData={props.refreshData} id={_id} />
+    <DeleteQuestion isNotAdmin={props.isNotAdmin} which={'results'} credential={props.credential} refreshData={props.refreshData} id={_id} />
     </Container>
     <Divider />
   </Box>
@@ -32,7 +32,7 @@ const ResultBoard = (props) => {
       </Heading>
       </Center>
       {
-        props.results.map((result, idx) => <BoardEntry refreshData={props.refreshData} isNotAdmin={props.isNotAdmin} key={`result ${result.name}`} result={result}/>)
+        props.results.map((result, idx) => <BoardEntry credential={props.credential} refreshData={props.refreshData} isNotAdmin={props.isNotAdmin} key={`result ${result.name}`} result={result}/>)
       }
     </Box>
   )

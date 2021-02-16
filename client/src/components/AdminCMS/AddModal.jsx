@@ -41,7 +41,7 @@ const AddModal = (props) => {
       pic = 'https://loremflickr.com/cache/resized/65535_50778513638_c2a98281e3_320_240_nofilter.jpg';
     }
     const data = { question, answer, type, pic };
-    axios.post('/api/questions', data)
+    axios.post('/api/questions', data, { headers: {token: props.credential.token}})
       .then(res => {
         toast({
           position: 'bottom-left',

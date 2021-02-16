@@ -26,7 +26,7 @@ const AdminDashboard = (props) => {
       <Box m={3}>
       <Center>
       <Heading m={1}>
-      Welcome seradotwav!
+      {`welcome ${props.credential.userName || 'seradotwav'}`}
       </Heading>
       </Center>
       <Center>
@@ -35,12 +35,12 @@ const AdminDashboard = (props) => {
       </Text>
       </Center>
       <Center>
-      <AddModal refreshData={refreshData} />
+      <AddModal credential={props.credential} refreshData={refreshData} />
       </Center>
-      <ResultBoard refreshData={refreshData} results={results}/>
+      <ResultBoard credential={props.credential} refreshData={refreshData} results={results}/>
       </Box>
       <Box>
-      <QuestionList questions={questions} refreshData={refreshData} />
+      <QuestionList credential={props.credential} questions={questions} refreshData={refreshData} />
       </Box>
     </Flex>
   )

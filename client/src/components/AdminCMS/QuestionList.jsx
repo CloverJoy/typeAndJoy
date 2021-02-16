@@ -11,7 +11,7 @@ const QuestionListEntry = (props) => {
       <Text>{`Question: ${question}`}</Text>
       <Text>{`Type: ${type}`}</Text>
       <Text>{`Answer: ${answer}`}</Text>
-      <DeleteQuestion which={'questions'} isNotAdmin={props.isNotAdmin} refreshData={props.refreshData} id={_id} />
+      <DeleteQuestion which={'questions'} credential={props.credential} isNotAdmin={props.isNotAdmin} refreshData={props.refreshData} id={_id} />
     </Box>
     </Container>
     <Divider />
@@ -24,7 +24,7 @@ const QuestionList = (props) => {
     <Center>
     <Box sx={{"overflowX": "hidden", "textAlign":"justify", "height": "80vh"}}>
     {
-      props.questions.map((question, idx) => <QuestionListEntry refreshData={props.refreshData} key={`questions ${idx}`} q={question} />)
+      props.questions.map((question, idx) => <QuestionListEntry credential={props.credential} refreshData={props.refreshData} key={`questions ${idx}`} q={question} />)
     }
     </Box>
     </Center>

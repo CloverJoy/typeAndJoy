@@ -16,7 +16,7 @@ import {
   const cancelRef = React.useRef()
   const handleDelete = () => {
     const id = props.id;
-    axios.delete(`/api/${props.which}`, {params: {id}})
+    axios.delete(`/api/${props.which}`,{params: {id}, headers: {token: props.credential.token}})
       .then(res => {
         props.refreshData();
         onClose();

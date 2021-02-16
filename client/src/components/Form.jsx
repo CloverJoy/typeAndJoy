@@ -33,7 +33,7 @@ const Form = () => {
     console.log(data);
     axios.post('/api/admin', data)
       .then(res => {
-        console.log(res);
+        console.log(res.data);
         toast({
           position: 'bottom-left',
           title: `Welcome ${data.userName}!`,

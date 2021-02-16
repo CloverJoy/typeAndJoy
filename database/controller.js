@@ -50,7 +50,6 @@ const deleteResult = async (id) => {
 const retrieveResults = async () => {
    try {
     const results = await Results.find({}).sort({createdAt: -1});
-    console.log(results);
     return results
   } catch (error) {
     console.log(error);
@@ -84,14 +83,12 @@ const createAdmin = async (info) => {
 const loginAdmin = async (info) => {
   try {
     const fromDb = await Admins.findOne({userName: info.userName});
-    if (!fromDb) { console.log('nomatch user');return 'nouser';}
+    if (!fromDb) { return 'nouser';}
     const passwordMatched = await compare(info.password, fromDb.password);
     if (!passwordMatched) {
-      console.log('wrong password!')
       return 'passincorrect'
     } else if (passwordMatched) {
-      console.log('success!')
-      return 'success'
+      return fromDb;
     }
   } catch (err) {
     console.log(err);

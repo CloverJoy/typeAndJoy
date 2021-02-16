@@ -5,6 +5,7 @@ import AdminDashboard from './AdminDashboard';
 
 const Admin = (props) => {
   const [success, setSuccess] = useState(false);
+  const [credential, setCredential] = useState({user: ''});
   const toast = useToast();
   const login = () => {
     setSuccess(true);
@@ -17,11 +18,16 @@ const Admin = (props) => {
       isClosable: true,
     })
   }
+  const getLoginInfo = (data) => {
+    setCredential(data);
+    console.log(credential);
+  };
+
   if (!success) return (
-    <Login login={login}/>
+    <Login getLoginInfo={getLoginInfo} login={login}/>
   )
   if (success) return (
-    <AdminDashboard />
+    <AdminDashboard credential={credential} />
   )
 };
 

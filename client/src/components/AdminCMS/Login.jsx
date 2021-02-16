@@ -10,7 +10,14 @@ const Login = (props) => {
   const handleSubmit = (e) => {
     const data = {userName: user, password: password};
     axios.post('/api/login', data)
-      .then(res => console.log(res.data))
+      .then(res => {
+        if (res.data.userName) {
+           console.log(res.data);
+          props.getLoginInfo(res.data);
+          props.login();
+        }
+        console.log(res.data);
+      })
       .catch(err => {
         console.log(err.data);
       })

@@ -1,4 +1,5 @@
 const express = require('express')
+require('dotenv').config();
 const app = express()
 const {
   retrieve,
@@ -10,6 +11,7 @@ const {
   createAdmin,
   loginAdmin,
 } = require('../database/controller.js');
+const { generateToken, authenticateToken } = require('./security.js');
 
 const PORT = process.env.PORT || 3000;
 
@@ -26,7 +28,7 @@ app.get('/api/questions', async (req, res) => {
   }
 });
 
-app.post('/api/questions', async (req, res) => {
+app.post('/api/questions',authenticateToken, async (req, res) => {
   try {
     const data = req.body;
     console.log(data)
@@ -38,7 +40,7 @@ app.post('/api/questions', async (req, res) => {
   }
 });
 
-app.delete('/api/questions', async (req,res) => {
+app.delete('/api/questions', authenticateToken, async (req,res) => {
   try {
     const { id } = req.query;
     await deleteQuestion(id);
@@ -71,7 +73,7 @@ app.post('/api/results', async (req,res) => {
   }
 });
 
-app.delete('/api/results', async (req,res) => {
+app.delete('/api/results', authenticateToken, async (req,res) => {
   try {
     const { id } = req.query;
     await deleteResult(id);
@@ -98,6 +100,12 @@ app.post('/api/login', async (req, res) => {
   try {
     const data = req.body;
     const status = await loginAdmin(data);
+    if (status.userName ===  data.userName) {
+      const dataReturn = {userName: status.userName }
+      const token = generateToken(dataReturn)
+      dataReturn.token = token;
+      res.send(dataReturn);
+    }
     res.send(status);
   } catch (err) {
     res.sendStatus(500);
