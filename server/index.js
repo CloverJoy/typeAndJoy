@@ -87,9 +87,8 @@ app.delete('/api/results', authenticateToken, async (req,res) => {
 app.post('/api/admin', async (req, res) => {
   try {
     const data = req.body;
-    console.log(data);
-    await createAdmin(data);
-    res.sendStatus(201);
+    const created = await createAdmin(data);
+    res.send(201);
   } catch (err) {
     console.log(err);
     res.send(500);

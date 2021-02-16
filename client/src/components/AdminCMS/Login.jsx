@@ -7,16 +7,23 @@ const Login = (props) => {
   const [password, setPassword] = useState('');
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
+  const toast = useToast();
   const handleSubmit = (e) => {
     const data = {userName: user, password: password};
     axios.post('/api/login', data)
       .then(res => {
         if (res.data.userName) {
-           console.log(res.data);
           props.getLoginInfo(res.data);
+          toast({
+            position: 'bottom-left',
+            title: `Welcome ${res.data.userName}!`,
+            description: 'Succesfully login to admin dashboard',
+            status: 'success',
+            duration: 2222,
+            isClosable: true,
+          })
           props.login();
         }
-        console.log(res.data);
       })
       .catch(err => {
         console.log(err.data);

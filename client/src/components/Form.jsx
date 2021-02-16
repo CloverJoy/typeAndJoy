@@ -30,7 +30,6 @@ const Form = () => {
   const toast = useToast();
 
   const onSubmit = (data) => {
-    console.log(data);
     axios.post('/api/admin', data)
       .then(res => {
         console.log(res.data);

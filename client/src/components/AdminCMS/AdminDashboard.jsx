@@ -26,7 +26,7 @@ const AdminDashboard = (props) => {
       <Box m={3}>
       <Center>
       <Heading m={1}>
-      {`welcome ${props.credential.userName || 'seradotwav'}`}
+      {`welcome ${props.credential.userName || 'LOGIN DEMO'}`}
       </Heading>
       </Center>
       <Center>
