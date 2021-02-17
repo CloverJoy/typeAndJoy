@@ -1,12 +1,21 @@
 import React from 'react';
+import { Button, ButtonGroup, Box, Center, Text, Image, Container } from '@chakra-ui/react';
 
 const QuizFormat = (props) => (
-  <div>
-    <h3>{props.question.question}</h3>
-    <img src={props.question.pic}/>
-    <button onClick={() => props.addScore(props.question, false)}>False</button>
-    <button onClick={() => props.addScore(props.question, true)}>True</button>
-  </div>
+   <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" p={5} m={5}>
+    <Center>
+      <Image sizes="320px" src={props.question.pic}/>
+    </Center>
+    <Center>
+    <Container>
+       <Text mt="4" fontSize="lg">{props.question.question}</Text>
+     </Container>
+    </Center>
+    <Center>
+      <Button colorScheme="red" variant="outline" m={5} onClick={() => props.addScore(props.question, false)}>False</Button>
+      <Button colorScheme="teal" variant="outline" onClick={() => props.addScore(props.question, true)}>True</Button>
+    </Center>
+  </Box>
 )
 
 export default QuizFormat;

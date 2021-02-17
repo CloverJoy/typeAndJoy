@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Text, Center, Box } from '@chakra-ui/react'
 import QuizFormat from './QuizFormat';
 import QuizResult from './QuizResult';
 import mbtiQuestions from '../../../offlineData.js';
@@ -29,18 +31,32 @@ const Quiz = (props) => {
     setScore({...score, [letter]: current + 1});
     addStep();
   }
+  useEffect(() => {
+    axios.get('/api/questions')
+      .then(res => setQuizes(res.data))
+      .catch(err => console.log(err));
+  }, [])
   if (step < quizes.length) {
     return (
-      <div>
-        <h1> Start Quiz </h1>
+        <Box m={4}>
+        <Center>
+        <Text
+          bgGradient="linear(to-r, blue.200, green.500)"
+          bgClip="text"
+          fontSize="3xl"
+          fontWeight="extrabold"
+        >
+        {`Question ${step+1}/${quizes.length}`}
+        </Text>
+        </Center>
+        <Center>
         <QuizFormat question={quizes[step]} addScore ={addScore} />
-      </div>
+        </Center>
+        </Box>
     )
   } else {
     return (
-      <div>
         <QuizResult score={score} />
-      </div>
     )
   }
 };
