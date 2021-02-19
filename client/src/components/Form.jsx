@@ -43,7 +43,15 @@ const Form = () => {
         });
         setIsRegistered(true);
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+         toast({
+          title: "An error occurred/secret key wrong.",
+          description: "Unable to create user account.",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        })
+      });
   }
 
   if (!isRegistered) {
@@ -62,6 +70,10 @@ const Form = () => {
             <FormControl id="fullName" isRequired>
             <FormLabel>Full Name</FormLabel>
             <Input name="fullName" ref={register({ required: true, minLength: 3 })} placeholder="Seraphine Songstress" />
+            </FormControl>
+            <FormControl id="secret" isRequired>
+            <FormLabel>Secret Key</FormLabel>
+            <Input name="secret" ref={register({ required: true, minLength: 3 })} placeholder="You got it from the creator" />
             </FormControl>
             <FormControl id="userName" isRequired>
             <FormLabel>User Name</FormLabel>

@@ -3,10 +3,10 @@ const { bulk } = require('./controller.js');
 
 mongoose.connect('mongodb://localhost:/typeandjoy', { useNewUrlParser: true, useUnifiedTopology: true })
 
-const EI = 'https://loremflickr.com/cache/resized/65535_50656849541_6221f03080_320_240_nofilter.jpg';
-const SN = 'https://loremflickr.com/cache/resized/defaultImage.small_320_240_nofilter.jpg';
-const TF = 'https://loremflickr.com/cache/resized/65535_47944137627_2625fd4e50_n_320_240_nofilter.jpg';
-const JP = 'https://loremflickr.com/cache/resized/65535_50778513638_c2a98281e3_320_240_nofilter.jpg';
+const EI = 'https://picture-service.s3.us-east-2.amazonaws.com/images498/image101.jpg';
+const SN = 'https://picture-service.s3.us-east-2.amazonaws.com/images498/image102.jpg';
+const TF = 'https://picture-service.s3.us-east-2.amazonaws.com/images498/image103.jpg';
+const JP = 'https://picture-service.s3.us-east-2.amazonaws.com/images498/image104.jpg';
 
 
 const datas = [

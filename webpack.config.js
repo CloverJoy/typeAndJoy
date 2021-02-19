@@ -20,8 +20,8 @@ module.exports = {
       }
     ]
   },
-  devtool: 'inline-source-map',
-  mode: 'development',
+  // devtool: 'inline-source-map',
+  mode: 'production',
   resolve: {
     extensions: ['.js', '.jsx']
   },

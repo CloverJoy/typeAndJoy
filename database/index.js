@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost:/typeandjoy', { useNewUrlParser: true, useUnifiedTopology: true })
+// mongoose.connect('mongodb://localhost:/typeandjoy', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://database:/typeandjoy', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('succesfully connect to DB!'))
   .catch(() => console.log('error'));
 mongoose.set('useFindAndModify', false);
@@ -23,8 +24,8 @@ const resultSchema = new mongoose.Schema({
 
 const adminSchema = new mongoose.Schema({
   fullName: {type: String, required: true},
-  userName: {type: String, required: true, unique: true},
-  email: {type: String, required: true, unique: true},
+  userName: {type: String, required: true},
+  email: {type: String, required: true},
   password: {type: String, required: true},
   mbtiType: {type: String},
 }, { timestamps: true });

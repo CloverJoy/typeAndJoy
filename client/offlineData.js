@@ -1,8 +1,8 @@
 // RANDOM IMAGE FOR QUESTIONS
-const EI = 'https://loremflickr.com/320/240/party,home';
-const SN = 'https://loremflickr.com/320/240/technician,chess';
-const TF = 'https://loremflickr.com/320/240/negotiate,thinker';
-const JP = 'https://loremflickr.com/320/240/judge,chill';
+const EI = 'https://picture-service.s3.us-east-2.amazonaws.com/images498/image101.jpg';
+const SN = 'https://picture-service.s3.us-east-2.amazonaws.com/images498/image102.jpg';
+const TF = 'https://picture-service.s3.us-east-2.amazonaws.com/images498/image103.jpg';
+const JP = 'https://picture-service.s3.us-east-2.amazonaws.com/images498/image104.jpg';
 
 // MBTI QUESTIONS STORAGE
 const mbtiQuestions = [

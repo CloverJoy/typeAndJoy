@@ -87,6 +87,8 @@ app.delete('/api/results', authenticateToken, async (req,res) => {
 app.post('/api/admin', async (req, res) => {
   try {
     const data = req.body;
+    console.log(data);
+    if (data.secret !== process.env.SECRET_BETA_KEY) { res.sendStatus(403); return; };
     const created = await createAdmin(data);
     res.send(201);
   } catch (err) {
@@ -105,7 +107,6 @@ app.post('/api/login', async (req, res) => {
       dataReturn.token = token;
       res.send(dataReturn);
     }
-    res.send(status);
   } catch (err) {
     res.sendStatus(500);
   }
