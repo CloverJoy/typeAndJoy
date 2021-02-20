@@ -1,3 +1,55 @@
 # typeAndJoy
 ![ToggleLightDark](https://i.imgur.com/mm5AQNG.gif)
-<img src="https://i.imgur.com/mm5AQNG.gif" alt="ToggleLightDark" align="center" />
+<br/>
+[Link to the project](http://18.216.5.167/)
+<br/>
+CURRENT STATUS: ONLINE. Current deployment technology: AMAZON AWS EC2 & Docker.
+<br/>
+## Ready to know yourself better?
+Type & Joy is a dynamic MBTI Personality test and CMS web application built by MERN stack technology.
+After taking MBTI test, you can also share your type to the world with the Type Board (Of course you can use your alias or nickname).
+This app provides the real-time test administration systems. For the administrator, you can create new question also delete the question, and it will automatically update to the personality test! For new question, the logic for the MBTI test is already implemented in the App, So you only need the question and type answer for the input.
+### Built With
+* [React](https://reactjs.org/)
+* [React Hook Form](https://react-hook-form.com/)
+* [Chakra UI](https://chakra-ui.com/)
+* [Express](http://expressjs.com/)
+* [Node JS](http://nodejs.org/)
+* [MongoDB](https://www.mongodb.com/)
+* [Mongoose](https://mongoosejs.com/)
+* [Bcrypt](https://github.com/kelektiv/node.bcrypt.js#readme)
+* [JWT](https://jwt.io/)
+* [Axios](https://github.com/axios/axios)
+### Also special credit to the sources
+* [Lorem Picsum](https://picsum.photos/)
+* [Art for every personality](https://patronart.com/blog/art-myers-briggs-personality-type/)
+
+## Demo
+![Personality test](https://picture-service.s3.us-east-2.amazonaws.com/typeandjoydemo/quiz.gif)
+<br/>
+**Personality quiz and result**
+<br/>
+<br/>
+![Share](https://picture-service.s3.us-east-2.amazonaws.com/typeandjoydemo/share.gif)
+<br/>
+**Share your personality type to the board!**
+<br/>
+<br/>
+![Register](https://picture-service.s3.us-east-2.amazonaws.com/typeandjoydemo/register.gif)
+<br/>
+**Admin Registration**. Secret key required to register. Please contact me if you want to contribute to the mbti questions or want to be an admin. 
+<br/>
+<br/>
+![Share](https://picture-service.s3.us-east-2.amazonaws.com/typeandjoydemo/login.gif)
+<br/>
+**Login (You can demo login as well to see the administration page, but you don't have authority to delete and post new question)**
+<br/>
+<br/>
+![admin](https://picture-service.s3.us-east-2.amazonaws.com/typeandjoydemo/admincmsreduced.gif)
+<br/>
+**Administrator Dashboard**. If you are in demo login, you cannot delete and post the question (Error 403)
+<br/>
+<br/>
+
+
+
