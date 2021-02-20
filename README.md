@@ -24,7 +24,31 @@ This app provides the real-time test administration systems. For the administrat
 * [Lorem Picsum](https://picsum.photos/)
 * [Art for every personality](https://patronart.com/blog/art-myers-briggs-personality-type/)
 
-## Demo
+## Installation
+1. Clone the repo
+   ```sh
+   git clone https://github.com/CloverJoy/typeAndJoy.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. For the first time usage, run this command to setup the initial server
+   ```sh
+   npm run startdeploy
+   ```
+4. If you want to develop this App, Exit current terminal and you can use this command.
+   For Front end development
+   ```sh
+   npm run react-dev
+   ```
+   Open new terminal and run the development server
+   ```sh
+   npm start
+   ```
+## Usage
+After the installation, server will listen to Localhost and you can fully operate the Web App, start from the landing page
+<br/>
 ![Personality test](https://picture-service.s3.us-east-2.amazonaws.com/typeandjoydemo/quiz.gif)
 <br/>
 **Personality quiz and result**
@@ -50,6 +74,10 @@ This app provides the real-time test administration systems. For the administrat
 **Administrator Dashboard**. If you are in demo login, you cannot delete and post the question (Error 403)
 <br/>
 <br/>
+## Contact
 
-
-
+Christoffel Angga - chris.ang.dev@gmail.com
+<br/>
+Project Link: [https://github.com/CloverJoy/typeAndJoy](https://github.com/CloverJoy/typeAndJoy)
+<br/>
+Linkedin: [https://www.linkedin.com/in/christoffelangga/](https://www.linkedin.com/in/christoffelangga/) 
