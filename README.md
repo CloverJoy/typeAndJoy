@@ -49,27 +49,27 @@ This app provides the real-time test administration systems. For the administrat
 ## Usage
 After the installation, server will listen to Localhost and you can fully operate the Web App, start from the landing page
 <br/>
-![Personality test](https://picture-service.s3.us-east-2.amazonaws.com/typeandjoydemo/quiz.gif)
+![Personality test](https://raw.githubusercontent.com/CloverJoy/typeAndJoy/master/assets/quiz.gif)
 <br/>
 **Personality quiz and result**
 <br/>
 <br/>
-![Share](https://picture-service.s3.us-east-2.amazonaws.com/typeandjoydemo/share.gif)
+![Share](https://raw.githubusercontent.com/CloverJoy/typeAndJoy/master/assets/share.gif)
 <br/>
 **Share your personality type to the board!**
 <br/>
 <br/>
-![Register](https://picture-service.s3.us-east-2.amazonaws.com/typeandjoydemo/register.gif)
+![Register](https://raw.githubusercontent.com/CloverJoy/typeAndJoy/master/assets/register.gif)
 <br/>
 **Admin Registration**. Secret key required to register. Please contact me if you want to contribute to the mbti questions or want to be an admin. 
 <br/>
 <br/>
-![Share](https://picture-service.s3.us-east-2.amazonaws.com/typeandjoydemo/login.gif)
+![Share](https://raw.githubusercontent.com/CloverJoy/typeAndJoy/master/assets/login.gif)
 <br/>
 **Login (You can demo login as well to see the administration page, but you don't have authority to delete and post new question)**
 <br/>
 <br/>
-![admin](https://picture-service.s3.us-east-2.amazonaws.com/typeandjoydemo/admincmsreduced.gif)
+![admin](https://raw.githubusercontent.com/CloverJoy/typeAndJoy/master/assets/admincmsreduced.gif)
 <br/>
 **Administrator Dashboard**. If you are in demo login, you cannot delete and post the question (Error 403)
 <br/>
