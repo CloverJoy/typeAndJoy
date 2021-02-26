@@ -22,8 +22,8 @@ This app provides the real-time test administration systems. For the administrat
 * [JWT](https://jwt.io/)
 * [Axios](https://github.com/axios/axios)
 ### Also special credit to the sources
-* [Lorem Picsum](https://picsum.photos/)
-* [Art for every personality](https://patronart.com/blog/art-myers-briggs-personality-type/)
+* [Lorem Picsum.](https://picsum.photos/)
+* [Art for every personality.](https://patronart.com/blog/art-myers-briggs-personality-type/)
 
 ## Installation
 1. Clone the repo
