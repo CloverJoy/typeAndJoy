@@ -1,8 +1,8 @@
-![typeAndJoy](https://raw.githubusercontent.com/CloverJoy/typeAndJoy/master/assets/tnj.png)
+# typeAndJoy
 <br />
 ![ToggleLightDark](https://i.imgur.com/mm5AQNG.gif)
 <br/>
-[Link to the project](http://18.216.5.167/)
+[type.christoffel.xyz](http://type.christoffel.xyz/)
 <br/>
 CURRENT STATUS: ONLINE. Current deployment technology: AMAZON AWS EC2 & Docker.
 <br/>
