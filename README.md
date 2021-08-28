@@ -39,7 +39,7 @@ This app provides the real-time test administration systems. For the administrat
    npm run startdeploy
    ```
 4. If you want to develop this App, Exit current terminal and you can use this command.
-   For Front end development
+   For Front end development.
    ```sh
    npm run react-dev
    ```
