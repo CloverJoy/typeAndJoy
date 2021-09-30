@@ -1,5 +1,4 @@
-![typeAndJoy](https://raw.githubusercontent.com/CloverJoy/typeAndJoy/master/assets/tnj.png)
-<br />
+# typeAndJoy
 ![ToggleLightDark](https://i.imgur.com/mm5AQNG.gif)
 <br/>
 [type.christoffel.xyz](http://type.christoffel.xyz/)
