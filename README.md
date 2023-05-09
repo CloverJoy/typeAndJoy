@@ -1,7 +1,6 @@
 # typeAndJoy
 ![ToggleLightDark](https://i.imgur.com/mm5AQNG.gif)
 <br/>
-[type.christoffel.xyz](http://type.christoffel.xyz/)
 <br/>
 CURRENT STATUS: OFFLINE. Update coming soon! Current deployment technology: AMAZON AWS EC2 & Docker.
 <br/>
