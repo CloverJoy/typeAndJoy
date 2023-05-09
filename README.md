@@ -3,7 +3,7 @@
 <br/>
 [type.christoffel.xyz](http://type.christoffel.xyz/)
 <br/>
-CURRENT STATUS: ONLINE. Current deployment technology: AMAZON AWS EC2 & Docker.
+CURRENT STATUS: OFFLINE. Update coming soon! Current deployment technology: AMAZON AWS EC2 & Docker.
 <br/>
 ## Ready to know yourself better?
 Type & Joy is a dynamic MBTI Personality test and CMS web application built by MERN stack technology.
